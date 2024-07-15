@@ -5,12 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WhyJoinMe extends Model
+class PortfolioImage extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'icon',
-        'title',
-        'short_desc'
+        'portfolio_id',
+        'image_path'
     ];
+
+    public function portfolio()
+    {
+        return $this->belongsTo(Portfolio::class);
+    }
 }
