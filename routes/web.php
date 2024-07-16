@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Home\HeroController;
+use App\Http\Controllers\Portfolio\PortfolioController;
+use App\Http\Controllers\Service\ServicesController;
+use App\Http\Controllers\Testmonials\TestmonialsController;
+use App\Http\Controllers\WhyJoinMe\WhyJoinMeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('heros', HeroController::class);
+Route::resource('whyjoinme', WhyJoinMeController::class);
+Route::resource('ourservices', ServicesController::class);
+Route::resource('portfolios', PortfolioController::class);
+Route::resource('testimonials', TestmonialsController::class);
